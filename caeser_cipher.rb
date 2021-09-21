@@ -19,19 +19,14 @@ end
 
 #Wrapping ASCII numbers
 def wrap (number, key, array)
-  if number > 90 && number < 97
-    jump_number = number - 26
-    puts jump_number
-    puts "got it"
+  jump_number = number + key
+  if jump_number > 90 && jump_number < 97
+    jump_number = jump_number - 26
     array.push(jump_number)
-  elsif number > 122 
-    jump_number = number - 26
-    puts jump_number
+  elsif jump_number > 122 && jump_number > 97
+    jump_number = jump_number - 26
     array.push(jump_number)
   else 
-    jump_number = number + key
-    puts jump_number
-    puts "else statement"
     array.push(jump_number)
   end
   array
@@ -49,4 +44,4 @@ def decode(array)
   secret
 end
 
-cipher("zZ", 3)
+cipher("hoUSe pARty", 7)
