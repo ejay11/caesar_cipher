@@ -20,13 +20,10 @@ end
 #Wrapping ASCII numbers
 def wrap (number, key, array)
   jump_number = number + key
-  if jump_number > 90 && jump_number < 97
-    jump_number = jump_number - 26
-    array.push(jump_number)
-  elsif jump_number > 122 && jump_number > 97
-    jump_number = jump_number - 26
+  if jump_number.between?(65, 90) || jump_number.between?(97, 122)
     array.push(jump_number)
   else 
+    jump_number = jump_number - 26
     array.push(jump_number)
   end
   array
